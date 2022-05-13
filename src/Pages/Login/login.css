@@ -1,0 +1,38 @@
+.form {
+    width: 450px;
+    margin: 50px auto;
+}
+
+.input {
+    width: 450px;
+    height: 60px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    margin-bottom: 25px;
+    padding: 20px;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 24px;
+    outline-color: rgba(0, 0, 0, 0.2);
+}
+
+.input::placeholder {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.lg-page-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lg-page-link{
+    text-decoration: none;
+    color: #1DA1F2;
+}

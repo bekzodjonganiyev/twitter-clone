@@ -1,0 +1,36 @@
+.btn {
+    height: 60px;
+    border: none;
+    border-radius: 76px;
+    color: white;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    outline-color:inherit;
+    margin-bottom: 20px;
+}
+
+.blue {
+    background: #1DA1F2;
+}
+
+.black {
+    background-color: black;
+}
+
+.px_450 {
+    width: 450px;
+}
+
+.px_200{
+    width: 20   0px;
+}
+
+.px_40{
+    height: 40px;
+}
+
+.mr{
+    margin-left: 20px;
+}

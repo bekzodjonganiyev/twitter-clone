@@ -54,9 +54,8 @@ const Sidebar = () => {
 			</div>
 
 			<Button
-				className='mr'
 				title={'Tweet'}
-				type='button'
+				type={'button'}
 				width={'px_200'}
 				bgColor={'blue'}
 				height={'px_40'}

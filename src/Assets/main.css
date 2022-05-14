@@ -1,46 +1,105 @@
 /* width */
 ::-webkit-scrollbar {
-    width: 3px;
+  width: 3px;
 }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background-color: #e4e4e4;
-    border-radius: 100px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background-color: #e4e4e4;
-    border-radius: 100px;
-  }
-  
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    overflow: hidden;
-    height: 625px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+  height: 625px;
 }
 
 .app {
-    display: flex;
+  display: flex;
 }
 
 .content {
-    width: 100%;
-    flex-grow: 1;
-    display: flex;
-    justify-content: space-between;
-    height: 625px;
-}
-.main-content{
-    width: 800px;
-    overflow: scroll;
-    overflow-x: hidden;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  height: 625px;
 }
 
-.right-content{
-    width: calc(100% - 800px)
+.main-content {
+  width: 800px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.right-content {
+  width: calc(100% - 800px);
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.right-content>input {
+  width: 90%;
+  height: 40px;
+  border: none;
+  background: #EFF3F4;
+  border-radius: 31px;
+  padding: 5px 15px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.trends {
+  width: 90%;
+  background-color: #EFF3F4;
+  border-radius: 10px;
+  padding: 10px 8px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.trends>.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.trends-body{
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.trends-body:last-child{
+  margin-bottom: 0;
+}
+
+.left{
+  text-align: left;
+}
+
+.left> h4{
+  margin: 5px 0;
+}
+
+.left > p{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: #393B41;
+  opacity: 0.6;
+  margin:0;
 }

@@ -6,11 +6,26 @@ import Avatar from '../../Assets/Images/Images/avatar.png';
 import Avatar_1 from '../../Assets/Images/Images/avatar-1.png';
 import Avatar_2 from '../../Assets/Images/Images/avatar-2.png';
 import Avatar_3 from '../../Assets/Images/Images/avatar-3.png';
+import Food from '../../Assets/Images/Images/kebab.png';
+
+import {
+	TweetDiagram,
+	TweetGif,
+	TweetImg,
+	TweetSchudle,
+	TweetSmile,
+} from '../../Assets/Images/Icons/Icons';
 
 import './home.css';
+import Button from '../../Components/Button/Button';
 
 const Home = () => {
 	const [post, setPost] = useState([]);
+
+	const [img, setImg] = useState({
+		img: Food,
+		alt: 'img',
+	});
 
 	const handleInput = (evt) => {
 		const newPost = {
@@ -19,10 +34,11 @@ const Home = () => {
 			name: JSON.parse(window.localStorage.getItem('token')).name,
 			username: JSON.parse(window.localStorage.getItem('token')).username,
 			sentance: evt.target.value,
+			optionalImg: Avatar,
 		};
 
 		if (evt.code === 'Enter') {
-			window.localStorage.setItem("posts", JSON.stringify([newPost, ...post]))
+			window.localStorage.setItem('posts', JSON.stringify([newPost, ...post]));
 			evt.target.value = '';
 			setPost([newPost, ...post]);
 		}
@@ -33,16 +49,44 @@ const Home = () => {
 			<Header title={'Home'} />
 			<div className='home-content'>
 				<div className='input-field'>
-					<img src={Avatar} alt='img' />
-					<input
-						type='text'
-						placeholder={`Tweet from ${
-							JSON.parse(window.localStorage.getItem('token')).name
-						}`}
-						onKeyUp={handleInput}
-					/>
-				</div>
+					<div className='input-wrapper'>
+						<img src={Avatar} alt='img' />
 
+						<div>
+							<input
+								type='text'
+								placeholder={`Tweet from ${
+									JSON.parse(window.localStorage.getItem('token')).name
+								}`}
+								onKeyUp={handleInput}
+							/>
+							<div className='tweet-additional'>
+								<label htmlFor='img'>
+									<span>
+										<TweetImg />
+									</span>
+									<input
+										className='hidden'
+										type='file'
+										name=''
+										id='img'
+										onChange={(evt) => {
+											setImg({
+												img:window.URL.createObjectURL(evt.target.files[0]),
+												alt:evt.target.files[0].name
+											});
+										}}
+									/>
+								</label>
+								<TweetGif />
+								<TweetDiagram />
+								<TweetSmile />
+								<TweetSchudle />
+							</div>
+						</div>
+
+					</div>
+				</div>
 				{post.map((item) => (
 					<PostItem
 						key={item.id}
